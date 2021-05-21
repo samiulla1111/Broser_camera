@@ -1,5 +1,6 @@
 let videoRecorder = document.querySelector("#record-video");
 let videoElem = document.querySelector("#video-elem");
+let capturebtn = document.querySelector(".capture-btn");
 let constrains = {
     video: true,
     audio: true
@@ -44,4 +45,22 @@ videoRecorder.addEventListener("click", function () {
         videoRecorder.innerHTML = "Record";
         recordState = false;
     }
+})
+
+capturebtn.addEventListener("click",function(){
+    let canvas = document.createElement("canvas");
+    canvas.width = videoElem.videoWidth;
+    canvas.height = videoElem.videoHeight;
+    let tool = canvas.getContext("2d");
+    // draw a frame on that canvas
+    tool.drawImage(videoElem, 0, 0);c
+    // toDataUrl 
+    let link = canvas.toDataURL();
+    // download 
+    let anchor = document.createElement("a");
+    anchor.href = link;
+    anchor.download = "file.png";
+    anchor.click();
+    anchor.remove();
+    canvas.remove();
 })
