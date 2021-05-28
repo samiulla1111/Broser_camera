@@ -1,6 +1,8 @@
 *{box-sizing: border-box;}
 body{
     margin:0px;
+    overflow: hidden;
+    
 }
 .video-container{
     height: 100vh;
@@ -10,13 +12,13 @@ body{
 .video{
     height: 100%;
     width:100%;
+   
 }
-
 .record-btn,.capture-btn{
     height: 4.5rem;
     width: 4.5rem;
     top: 1rem;
-    z-index: 6;
+    z-index: 2;
     border-radius: 50%;
     border:none;
     outline: none;  
@@ -47,58 +49,52 @@ body{
 
 /* animation */
 .record-animation{
-    animation: scaleUp 1s ease-in infinite;
+   animation: scaleUp 1s ease-in infinite; 
 }
-
 .capture-animation{
-    animation: scaleUp 1s ease-in;
-}
+    animation: scaleUp 0.5s ease-in ; 
+ }
 
 @keyframes scaleUp {
-    0%{
-        transform: scale(1);
+    0% {
+        transform: scale(1);   
     }
-
-    25%{
+    25% {
         transform: scale(1.125);
     }
-
-    50%{
+    50% {
         transform: scale(1.16);
     }
-
     75%{
         transform: scale(1.125);
     }
 }
-
 .filter-container{
-    height: 50vh;
-    width: 4rem;
+    height:50vh;
+    width:4rem;
     position: fixed;
-    top: 10vh;
-    left: 5vw;
-    z-index: 20;
+    top:15vh;
+    left:5vw;
+    z-index:6;
 }
-
 .filter{
-    background-image: url("https://picsum.photos/200");
-    height: 20%;
-    background-size: cover;
-    background-blend-mode: color-burn;
+   background-image: url("https://picsum.photos/id/237/200/300"); 
+height: 20%;  
+   background-size: cover;
+   /* mix bg color width the  image */
+   background-blend-mode: color-burn;
 }
-
 .timing{
-    color: white;
+    color:white;
     position: fixed;
-    bottom: 15vh;
-    left: 3vw;
+    bottom :15vh;
+    left:3vw;
     font-size: 1.7rem;
     font-family: sans-serif;
     font-weight: 600;
     display: none;
+    box-shadow: tomato;
 }
-
 .timing-active{
     display: block;
 }
@@ -107,23 +103,23 @@ body{
     height:100vh;
     width:100vw;
     position: fixed;
-    z-index:5;
+    z-index:4;
     display: none;
-    /* opacity: 0.5; */
+    
 
 }
 .ui-filter-active{
     display: block;
 }
-
 .zoom{
     height: 7rem;
     width: 3rem;
     background-color: #444;
     position: fixed;
-    z-index: 2;
+    z-index: 6;
     right: 7vw;
     top: 9vh;
+
 }
 .icon-container{
     color: white;
@@ -135,4 +131,21 @@ body{
 }
 .icon{
     font-size: 180%;
+}
+
+.gallery{
+    position: fixed;
+    z-index:6;
+    bottom: 2vh;
+    right:2vw;
+    display: block;
+    height: 5rem;
+    width:5rem;
+    text-decoration: none;
+    background-color: #444;
+    border-radius: 50%;
+    color:white;
+    font-size:120%;
+    padding-top:8px;
+    text-align: center;
 }
